@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		AF4A412D17936103F82EDEB9 /* Pods_instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F241F0AF7B6ADEE77B77D722 /* Pods_instagram.framework */; };
+		D940EA242162B94700C26CAE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D940EA232162B94700C26CAE /* ProfileViewController.swift */; };
+		D940EA262162C10600C26CAE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D940EA252162C10600C26CAE /* HomeViewController.swift */; };
+		D940EA282162C13B00C26CAE /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D940EA272162C13B00C26CAE /* CaptureViewController.swift */; };
 		D976437F2161410700125AC6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D976437E2161410700125AC6 /* LoginViewController.swift */; };
 		D991815F21613D2000D1874A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D991815E21613D2000D1874A /* AppDelegate.swift */; };
 		D991816121613D2000D1874A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D991816021613D2000D1874A /* ViewController.swift */; };
@@ -19,6 +22,9 @@
 /* Begin PBXFileReference section */
 		0796E258EC113A1E724F3AB1 /* Pods-instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-instagram/Pods-instagram.release.xcconfig"; sourceTree = "<group>"; };
 		325E5A0C3D631C16268BE4A3 /* Pods-instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-instagram/Pods-instagram.debug.xcconfig"; sourceTree = "<group>"; };
+		D940EA232162B94700C26CAE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D940EA252162C10600C26CAE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D940EA272162C13B00C26CAE /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
 		D976437E2161410700125AC6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D991815B21613D2000D1874A /* instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D991815E21613D2000D1874A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,9 +77,12 @@
 		D991815D21613D2000D1874A /* instagram */ = {
 			isa = PBXGroup;
 			children = (
+				D940EA272162C13B00C26CAE /* CaptureViewController.swift */,
+				D940EA252162C10600C26CAE /* HomeViewController.swift */,
 				D991815E21613D2000D1874A /* AppDelegate.swift */,
 				D991816021613D2000D1874A /* ViewController.swift */,
 				D991816221613D2000D1874A /* Main.storyboard */,
+				D940EA232162B94700C26CAE /* ProfileViewController.swift */,
 				D976437E2161410700125AC6 /* LoginViewController.swift */,
 				D991816521613D2200D1874A /* Assets.xcassets */,
 				D991816721613D2200D1874A /* LaunchScreen.storyboard */,
@@ -205,8 +214,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D940EA262162C10600C26CAE /* HomeViewController.swift in Sources */,
+				D940EA282162C13B00C26CAE /* CaptureViewController.swift in Sources */,
 				D976437F2161410700125AC6 /* LoginViewController.swift in Sources */,
 				D991816121613D2000D1874A /* ViewController.swift in Sources */,
+				D940EA242162B94700C26CAE /* ProfileViewController.swift in Sources */,
 				D991815F21613D2000D1874A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
