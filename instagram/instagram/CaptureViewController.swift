@@ -11,8 +11,8 @@ import UIKit
 class CaptureViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var postImageView: UIImageView!
+    @IBOutlet weak var captionTextField: UITextField!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,6 +51,15 @@ class CaptureViewController: UIViewController,UIImagePickerControllerDelegate, U
     }
     
 
+    @IBAction func onPost(_ sender: Any) {
+        if (self.postImageView.image == nil) {
+            return;
+        }
+        
+        Post.postUserImage(image: postImageView.image!, withCaption: captionTextField.text, withCompletion: nil)
+        
+        performSegue(withIdentifier: "HomeSegue", sender: nil)
+    }
     /*
     // MARK: - Navigation
 

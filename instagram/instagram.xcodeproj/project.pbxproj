@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AF4A412D17936103F82EDEB9 /* Pods_instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F241F0AF7B6ADEE77B77D722 /* Pods_instagram.framework */; };
+		D91DF02E216931410062ED22 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91DF02D216931410062ED22 /* Post.swift */; };
+		D91DF030216937F00062ED22 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91DF02F216937F00062ED22 /* PostCell.swift */; };
 		D940EA242162B94700C26CAE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D940EA232162B94700C26CAE /* ProfileViewController.swift */; };
 		D940EA262162C10600C26CAE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D940EA252162C10600C26CAE /* HomeViewController.swift */; };
 		D940EA282162C13B00C26CAE /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D940EA272162C13B00C26CAE /* CaptureViewController.swift */; };
@@ -22,6 +24,8 @@
 /* Begin PBXFileReference section */
 		0796E258EC113A1E724F3AB1 /* Pods-instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-instagram/Pods-instagram.release.xcconfig"; sourceTree = "<group>"; };
 		325E5A0C3D631C16268BE4A3 /* Pods-instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-instagram/Pods-instagram.debug.xcconfig"; sourceTree = "<group>"; };
+		D91DF02D216931410062ED22 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		D91DF02F216937F00062ED22 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostCell.swift; path = instagram/PostCell.swift; sourceTree = "<group>"; };
 		D940EA232162B94700C26CAE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D940EA252162C10600C26CAE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D940EA272162C13B00C26CAE /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +63,7 @@
 		D991815221613D1F00D1874A = {
 			isa = PBXGroup;
 			children = (
+				D91DF02F216937F00062ED22 /* PostCell.swift */,
 				D991815D21613D2000D1874A /* instagram */,
 				D991815C21613D2000D1874A /* Products */,
 				E9DD3D2E4BDA2987C003D040 /* Pods */,
@@ -82,6 +87,7 @@
 				D991815E21613D2000D1874A /* AppDelegate.swift */,
 				D991816021613D2000D1874A /* ViewController.swift */,
 				D991816221613D2000D1874A /* Main.storyboard */,
+				D91DF02D216931410062ED22 /* Post.swift */,
 				D940EA232162B94700C26CAE /* ProfileViewController.swift */,
 				D976437E2161410700125AC6 /* LoginViewController.swift */,
 				D991816521613D2200D1874A /* Assets.xcassets */,
@@ -178,11 +184,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-instagram/Pods-instagram-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+				"${BUILT_PRODUCTS_DIR}/ParseUI/ParseUI.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ParseUI.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -219,7 +227,9 @@
 				D976437F2161410700125AC6 /* LoginViewController.swift in Sources */,
 				D991816121613D2000D1874A /* ViewController.swift in Sources */,
 				D940EA242162B94700C26CAE /* ProfileViewController.swift in Sources */,
+				D91DF02E216931410062ED22 /* Post.swift in Sources */,
 				D991815F21613D2000D1874A /* AppDelegate.swift in Sources */,
+				D91DF030216937F00062ED22 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
