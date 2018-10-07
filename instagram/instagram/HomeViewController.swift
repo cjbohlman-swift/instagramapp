@@ -18,28 +18,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         postTableView.dataSource = self
         postTableView.delegate = self
-        // construct query
+        postTableView.rowHeight = UITableViewAutomaticDimension
+        postTableView.estimatedRowHeight = 200
         refreshControl = UIRefreshControl()
-        
         refreshControl.addTarget(self, action: #selector(HomeViewController.didPullToRefresh(_:)), for: .valueChanged)
         postTableView.insertSubview(refreshControl, at: 0)
-
         
-        let query = Post.query()!
-        query.limit = 20
-        query.includeKey("caption")
-        query.order(byDescending: "createdAt")
-        query.includeKey("author")
-        
-        // fetch data asynchronously
-        query.findObjectsInBackground { (newPosts, error: Error?) in
-            if let newPosts = newPosts {
-                self.posts = newPosts
-                self.postTableView.reloadData()
-            } else {
-                print(error?.localizedDescription ?? "")
-            }
-        }
+        queryForPosts()
         postTableView.reloadData()
     }
     
@@ -59,7 +44,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 print(error?.localizedDescription ?? "")
             }
         }
-        postTableView.reloadData()
         refreshControl.endRefreshing()
     }
     
@@ -73,9 +57,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
+        let cell = postTableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
         let newPost = posts[indexPath.row]
-        cell.instagramPost = newPost
+        //cell.instagramPost = newPost
+        cell.photoImageView.file = newPost["media"] as? PFFile
+        cell.photoImageView.load(inBackground: nil)
+        cell.postCaptionLabel.text = newPost["caption"] as? String
+        //print(cell.postCaptionLabel.text ?? "")
         return cell
     }
     
@@ -86,15 +74,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let cell = sender as! UITableViewCell
+        let indexPath = postTableView.indexPath(for: cell)
+        let post = posts[(indexPath?.row)!]
+        let detailViewCOntroller = segue.destination as! PostDetailViewViewController
+        detailViewCOntroller.post = post
     }
-    */
-
 }

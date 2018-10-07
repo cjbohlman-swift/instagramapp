@@ -91,22 +91,34 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="295.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TuJ-XB-BMj" customClass="PFImageView">
-                                                    <rect key="frame" x="28" y="11" width="292" height="208"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6PC-Ju-Jvu">
-                                                    <rect key="frame" x="28" y="236" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6PC-Ju-Jvu">
+                                                    <rect key="frame" x="8" y="8" width="42" height="7"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hEf-h1-n6D" customClass="PFImageView">
+                                                    <rect key="frame" x="8" y="23" width="327" height="250"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="250" id="bJL-eI-76t"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hEf-h1-n6D" secondAttribute="bottom" constant="8" id="SG4-xC-bnZ"/>
+                                                <constraint firstItem="hEf-h1-n6D" firstAttribute="centerY" secondItem="lSv-Ny-VUk" secondAttribute="centerY" id="Tbq-WG-MuM"/>
+                                                <constraint firstItem="hEf-h1-n6D" firstAttribute="top" secondItem="6PC-Ju-Jvu" secondAttribute="bottom" constant="8" id="VPu-WH-ZRc"/>
+                                                <constraint firstItem="hEf-h1-n6D" firstAttribute="centerX" secondItem="lSv-Ny-VUk" secondAttribute="centerX" id="bJu-dt-HOa"/>
+                                                <constraint firstItem="hEf-h1-n6D" firstAttribute="top" secondItem="6PC-Ju-Jvu" secondAttribute="bottom" constant="8" id="eK7-kX-pIN"/>
+                                                <constraint firstItem="6PC-Ju-Jvu" firstAttribute="top" secondItem="lSv-Ny-VUk" secondAttribute="top" constant="8" id="n4t-g6-wKF"/>
+                                                <constraint firstItem="6PC-Ju-Jvu" firstAttribute="leading" secondItem="lSv-Ny-VUk" secondAttribute="leading" constant="8" id="u80-cb-dgg"/>
+                                                <constraint firstItem="hEf-h1-n6D" firstAttribute="leading" secondItem="lSv-Ny-VUk" secondAttribute="leading" constant="8" id="ugE-zY-vl8"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="photoImageView" destination="hEf-h1-n6D" id="APg-Xs-jAg"/>
                                             <outlet property="postCaptionLabel" destination="6PC-Ju-Jvu" id="rTD-Vp-9V9"/>
-                                            <outlet property="postImage" destination="TuJ-XB-BMj" id="WvI-u3-Lhg"/>
+                                            <segue destination="eY1-Bp-WxH" kind="show" identifier="detailSegue" id="76p-bb-Xhk"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -123,6 +135,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFZ-QZ-INI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5191.1999999999998" y="118.29085457271366"/>
+        </scene>
+        <!--Post Detail View View Controller-->
+        <scene sceneID="fZs-3n-aWJ">
+            <objects>
+                <viewController id="eY1-Bp-WxH" customClass="PostDetailViewViewController" customModule="instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TY0-36-AdM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FJ6-am-8Sm" customClass="PFImageView">
+                                <rect key="frame" x="8" y="72" width="359" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="HWs-kv-quF"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timestamp" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Jl-yj-wpg">
+                                <rect key="frame" x="145" y="330" width="85.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VII-mD-2KG">
+                                <rect key="frame" x="158" y="358.5" width="59.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4Jl-yj-wpg" firstAttribute="centerX" secondItem="TY0-36-AdM" secondAttribute="centerX" id="0Cp-B3-TiM"/>
+                            <constraint firstItem="VII-mD-2KG" firstAttribute="centerX" secondItem="TY0-36-AdM" secondAttribute="centerX" id="2hT-J8-TAB"/>
+                            <constraint firstItem="4Jl-yj-wpg" firstAttribute="top" secondItem="FJ6-am-8Sm" secondAttribute="bottom" constant="8" id="7FX-Ir-bB9"/>
+                            <constraint firstItem="VII-mD-2KG" firstAttribute="top" secondItem="4Jl-yj-wpg" secondAttribute="bottom" constant="8" id="AT4-wG-dQl"/>
+                            <constraint firstItem="VII-mD-2KG" firstAttribute="top" secondItem="4Jl-yj-wpg" secondAttribute="bottom" constant="8" id="F9E-An-8bl"/>
+                            <constraint firstItem="FJ6-am-8Sm" firstAttribute="leading" secondItem="3h4-GQ-QSp" secondAttribute="leading" constant="8" id="GGN-y0-QX6"/>
+                            <constraint firstItem="FJ6-am-8Sm" firstAttribute="centerX" secondItem="TY0-36-AdM" secondAttribute="centerX" id="HJi-VH-uEg"/>
+                            <constraint firstItem="4Jl-yj-wpg" firstAttribute="top" secondItem="FJ6-am-8Sm" secondAttribute="bottom" constant="8" id="Wxe-60-UBI"/>
+                            <constraint firstItem="FJ6-am-8Sm" firstAttribute="top" secondItem="3h4-GQ-QSp" secondAttribute="top" constant="8" id="axQ-BR-hVn"/>
+                            <constraint firstItem="3h4-GQ-QSp" firstAttribute="trailing" secondItem="FJ6-am-8Sm" secondAttribute="trailing" constant="8" id="e9H-ma-PNn"/>
+                            <constraint firstItem="3h4-GQ-QSp" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="VII-mD-2KG" secondAttribute="bottom" constant="8" id="jdW-62-Egd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3h4-GQ-QSp"/>
+                    </view>
+                    <connections>
+                        <outlet property="captionLabel" destination="VII-mD-2KG" id="h7T-nf-xKc"/>
+                        <outlet property="postImageView" destination="FJ6-am-8Sm" id="NI9-Cy-Alw"/>
+                        <outlet property="timestampLabel" destination="4Jl-yj-wpg" id="yoF-Tn-B2G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yzj-pE-ofI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5957.6000000000004" y="124.58770614692655"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="KbT-J8-d2Y">
